@@ -55,12 +55,18 @@ Some files are included with this assignment for your benefit. You are not requi
 4. **input/names\*.txt** This is a set of sample name files. They follow the same format as mentioned earlier. Use them to test your program.
    	* I recommend you make a copy of this folder to have a backup of these input files, e.g. `cp -r input input-original`
    	* This is useful in case you accidentally overwrite one or more of these files when executing the program
-6. **results-ref.txt** This result file is a sample output of the IPs for the hostnames from all the **names\*.txt** files used as input.
-	* This file does not exist by default. You can create the reference results file by running the lookup program, e.g.:
-		* `./lookup input/names1.txt input/names2.txt input/names3.txt input/names4.txt input/names5.txt results-ref.txt`
-8. **lookup.c** This program represents an un-threaded solution to this assignment. Feel free to use it as a starting point for your program, or as a reference for using the utility functions and performing file i/o in C.
-9. **pthread-hello.c** A simple threaded "Hello World" program to demonstrate basic use of the `pthread` library.
-10. **Makefile** A GNU Make makefile to build all the code.
+5. **lookup.c** This program represents an un-threaded solution to this assignment. Feel free to use it as a starting point for your program, or as a reference for using the utility functions and performing file i/o in C.
+6. **pthread-hello.c** A simple threaded "Hello World" program to demonstrate basic use of the `pthread` library.
+7. **Makefile** A GNU Make makefile to build all the code.
+8. **lookup/src/main.rs**  This program represents an un-threaded solution to this assignment in Rust. You can use it as a starting point for your program, or as a reference for using the utility functions and performing file i/o in Rust.
+9. **multi-lookup/src/main.rs** Currently just a Hello World program to be replaced with your Rust implementation.
+
+## Helpful Recommendations
+
+1. **results-ref.txt** Create this file to test your solution outputs against. You can create this by running the lookup program, e.g.:
+```bash
+$ ./lookup input/names1.txt input/names2.txt input/names3.txt input/names4.txt input/names5.txt results-ref.txt
+```
 
 ## Additional Specifications
 Many of the specifications for your program are embedded in the descriptions above. This section details additional specifications to which you must adhere.
