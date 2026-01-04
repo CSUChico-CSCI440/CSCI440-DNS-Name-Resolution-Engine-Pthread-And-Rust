@@ -11,7 +11,7 @@ This type of system architecture is referred to as a Producer-Consumer architect
 
 
 Figure 1: System Architecture
-![Figure 1](https://raw.githubusercontent.com/CSUChico-CSCI340/CSCI340-DNS-Name-Resolution-Engine/master/handout/pa2_2.png "System Architecture: Basic Idea of Implementation")
+![Figure 1](https://raw.githubusercontent.com/CSUChico-CSCI440/CSCI440-DNS-Name-Resolution-Engine-Pthread-And-Rust/main/handout/pa2_2.png "System Architecture: Basic Idea of Implementation")
 
 ## Description
 ### Name Files
