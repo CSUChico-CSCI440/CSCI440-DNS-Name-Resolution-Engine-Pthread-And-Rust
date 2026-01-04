@@ -39,9 +39,9 @@ use ecc-linux (although this hasn’t been tested) or your native Linux install.
 Download this repository as a zip file and then extract it where you would like to store your project files. An example for downloading and extracting the zip file is below, assuming you are in your home directory (you may remove the main.zip file after unzipping it):
 
 ```bash
-~$ wget https://github.com/CSUChico-CSCI340/CSCI440-DNS-Name-Resolution-Engine/archive/refs/heads/main.zip
+~$ wget https://github.com/CSUChico-CSCI440/CSCI440-DNS-Name-Resolution-Engine-Pthread-And-Rust/archive/refs/heads/main.zip
 ~$ unzip main.zip
-~$ cd CSCI440-DNS-Name-Resolution-Engine/DNS-handout/
+~$ cd CSCI440-DNS-Name-Resolution-Engine-Pthread-And-Rust/DNS-handout/
 ```
 
 ## What's Included
