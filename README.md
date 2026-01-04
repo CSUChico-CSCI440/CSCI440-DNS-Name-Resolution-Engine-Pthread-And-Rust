@@ -1,4 +1,4 @@
-CSCI440-DNS-Name-Resolution-Engine
+CSCI440 DNS Name Resolution Engine in C and Rust
 ==================================
 ## CSCI440 - Operating Systems
 Adapted from University of Colorado at Boulder CSCI3753 Assignment
