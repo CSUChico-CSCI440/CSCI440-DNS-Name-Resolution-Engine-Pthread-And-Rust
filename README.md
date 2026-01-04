@@ -72,11 +72,16 @@ $ ./lookup input/names1.txt input/names2.txt input/names3.txt input/names4.txt i
 Many of the specifications for your program are embedded in the descriptions above. This section details additional specifications to which you must adhere.
 
 ### Program Arguments
-Your executable program should be named "multi-lookup". When called, it should interpret the last argument as the file path for the file to which results will be written. All proceeding arguments should be interpreted as input files containing hostnames in the aforementioned format.
+Your executable program should be named "multi-lookup". When called, it should interpret the last argument as the file path for the file to which results will be written. All preceding arguments should be interpreted as input files containing hostnames in the aforementioned format.
 
-An example call involving three input files might look like:
+An example call involving three input files for your C implementation might look like:
 ```
 multi-lookup names1.txt names2.txt names3.txt result.txt
+```
+
+An example call involving five input files might look like this when running your Rust program with Cargo:
+```
+cargo run ../input/names1.txt ../input/names2.txt ../input/names3.txt ../input/names4.txt ../input/names5.txt results.txt 
 ```
 
 ### Limits
@@ -96,7 +101,7 @@ You must handle the following errors in the following manners:
 All system and library calls should be checked for errors. If you encounter errors not listed above, you should print an appropriate message to stderr, and then either exit or continue, depending upon whether or not you can recover from the error gracefully.
 
 ## External Resources
-You may use the following libraries and code to complete this assignment, as well as anything you have written for this assignment:
+You may use the following libraries and code to complete this assignment in C, as well as anything you have written for this assignment:
 * Any functions listed in util.h
 * Any functions listed in queue.h
 * Any functions in the C Standard Library
@@ -105,32 +110,41 @@ You may use the following libraries and code to complete this assignment, as wel
 * Standard Linux Random Number Generator functions
 * Standard Linux I/O functions
 
+You may use the following libraries and code to complete this assignment in Rust, as well as anything you have written for this assignment:
+* dns-lookup
+* std
+* crossbeam
+
 If you would like to use additional external libraries, you must clear it with me first. You will not be allowed to use pre-existing thread-safe queue or file I/O libraries since the point of this assignment is to teach you how to make non-thread-safe resources thread-safe.
 
 ## What You Must Provide
 To receive full credit, you must submit the following items to [INGInious](https://inginious.csuchico.edu/) by the due date.
 
+To the C submission, which will validate your C code generates the correct output:
+
 * **multi-lookup.c**: Your program, conforming to the above requirements
 * **multi-lookup.h**: A header file containing prototypes for any function you write as part of your program.
+
+As you might want to modify the *Cargo.toml* file or add additional *.rs* files for your Rust implementation, you'll tar up your *multi-lookup* folder and submit the whole thing, which means I can't validate it on [INGInious](https://inginious.csuchico.edu/), so correctness will be determined manually during grading. But need to submit the following to the Rust submission on [INGInious](https://inginious.csuchico.edu/).
+
+* **multi-lookup.tar.gz**: Your cargo project folder in a tar.gz file, conforming to the above requirements
 
 ## Extra Credit
 There are a few options for receiving extra credit on this assignment. Completion of each of the following items will gain you 5 points of extra credit per item. If you alter any files other than *multi-lookup.c* and *multi-lookup.h* to accomplish the extra credit make sure you submit them as part of your assignment by taring up your whole project directory as a tar.gz file and submit to the extra credit option on INGInious. **Make sure you turn in your original functioning project (which synchronizes access to shared resources using mutexes and/or semaphores) prior to attempting any of the extra credit**. 
 
-You should submit all the extra credit code in one tar.gz file. This tar file should contain a README.md that lists off which extra credit you solved, as well as your code for the extra credit (you may submit all extra credit in the same folder or in multiple folders, with the folder name representing the extra credit solved). Depending on the extra credits you complete, you may want to keep a copy of your original functioning program in a folder separate from your extra credit folder(s).
+You should submit all the extra credit code in one tar.gz file. This tar file should contain a README.md that lists off which extra credit you solved, as well as your code for the extra credit (you may submit all extra credit in the same folder or in multiple folders, with the folder name representing the extra credit solved). Depending on the extra credits you complete, keep a copy of your original functioning program in a folder separate from your extra credit folder(s).
 
-* **Multiple IP Addresses**: Many hostnames return more than a single IP address. Add support for listing an arbitrary number of addresses to your program. These addresses should be printed to the output file as additional comma-separated strings after the hostname. For example:
+* **Multiple IP Addresses in C**: Many hostnames return more than a single IP address. Add support for listing an arbitrary number of addresses to your program. These addresses should be printed to the output file as additional comma-separated strings after the hostname. For example:
 ```
 www.google.com,74.125.224.81,76.125.232.80,75.125.211.70
 ```
 You may find it necessary to modify code in the util.h and util.c files to add this functionality. If you do this, please maintain backwards compatibility with the existing util.h functions. This is most easily done by adding new function instead of modifying the existing ones.
-* **Matching Number of Threads to Number of Cores**: Make your program dynamically detect the number of cores available on a system and set the number of resolver threads to take into account the number of cores. If you are trying to get extra credit on this assignment, I recommend starting with this option.
+* **Matching Number of Threads to Number of Cores in C**: Make your program dynamically detect the number of cores available on a system and set the number of resolver threads to take into account the number of cores. If you are trying to get extra credit on this assignment, I recommend starting with this option.
 * **IPv6 Support and Testing**: Add support for IPv6 IP addresses and find an IPv6 aware environment where you can test this support. IPv6 is relatively new, so if you are unable to test this support at your home, you should try testing it at another location (such as on campus). You may find it necessary to modify code in util.h and util.c to complete this item. If you do so, please maintain backward compatibility with the existing code.
-* **Full-Loop Lookups**: Make each requester thread query the output file every 250ms to detect when each of its requests have been filled. Requester threads should print a message to the user with the IP address of each hostname, and should not exit until all of the threads requests have been satisfied.
 * **Benchmarks**: Determine the ideal number of resolver threads for a given processor core count. Provide benchmark data backing up your determination. Include this documentation in your README.
-* **Condition Variables**: Implement your synchronization protections using POSIX condition variables. You must submit the original project working with mutexes or semaphores to get credit for this or any of the extra credit.
+* **Condition Variables in C**: Implement your synchronization protections using POSIX condition variables. You must submit the original project working with mutexes or semaphores to get credit for this or any of the extra credit.
 * **Condition Variables in C++11 or newer**: Implement your synchronization protections using C++11 or newer condition variables. This will require you to change the compilation to C++11 or a newer C compiler so make sure you update the Makefile and include in your tar package of files if you choose this option. You have to submit the original project working with mutexes or semaphores to get credit for this or any of the extra credit.
 * **Go:** Implement the assignment in the Go programming language using Go's thread-safe channels and threads, minimum resolver/requester threads are the same.
-* **Rust:** Implement the assignment in the Rust programming language using Rust in a threaded/thread-safe manner. 
 
 
 ## Grading
@@ -140,8 +154,17 @@ To received full credit your program must:
 * Run without leaking any memory, as measured using valgrind
 * Document any resources you use to solve your assignment in the header comment of your file
 * Include your name in the header comment of your file
+* Your program should adhere to good coding style practices.
 
-Your program should adhere to good coding style practices.
+### Evaluation
+Grades for this assignment will be assigned as follows:
+* 10% C implementation uses pthreads to create threads correctly
+* 10% C implementation generates expected output (will be evaluated on INGInious)
+* 30% C implementation protects the bounded buffer correctly
+* 10% C implementation protects the output file correctly
+* 10% Rust implementation is threaded and generates the expected output 
+* 20% Rust implementation protects the bounded buffer correctly
+* 10% Rust implementation protects the output file correctly
 
 ### NOTE: VALGRIND HAS ISSUES WITH THREADS, ONLY USE IF YOU ARE CURIOUS
 
