@@ -124,7 +124,7 @@ You may find it necessary to modify code in the util.h and util.c files to add t
 * **Condition Variables**: Implement your synchronization protections using POSIX condition variables. You must submit the original project working with mutexes or semaphores to get credit for this or any of the extra credit.
 * **Condition Variables in C++11 or newer**: Implement your synchronization protections using C++11 or newer condition variables. This will require you to change the compilation to C++11 or a newer C compiler so make sure you update the Makefile and include in your tar package of files if you choose this option. You have to submit the original project working with mutexes or semaphores to get credit for this or any of the extra credit.
 * **Go:** Implement the assignment in the Go programming language using Go's thread-safe channels and threads, minimum resolver/requester threads are the same.
-* **Rust:** Implement the assignment in the Rust programming language using Rust in a threaded/thread-safe manner. 
+
 
 
 ## Grading
