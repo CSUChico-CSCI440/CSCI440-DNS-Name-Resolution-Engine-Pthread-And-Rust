@@ -137,6 +137,26 @@ To received full credit your program must:
 
 Your program should adhere to good coding style practices.
 
+## Grading Breakdown (100 pts)
+
+### C Implementation (60 pts)
+- **C Threaded Implementation** — 10 pts  
+- **Bounded Buffer Protection (C)** — 30 pts  
+  - Fully thread-safe: 30 pts  
+  - Only requester protected: 15 pts  
+  - Only resolver protected: 15 pts  
+- **File Protection (C)** — 10 pts  
+- **C Traditional Requirements / Overall** — 10 pts  
+
+### Rust Implementation (40 pts)
+- **C Implementation Works (required for Rust grading)** — 10 pts  
+- **Rust Implementation (as expected)** — 10 pts  
+- **Bounded Buffer Protection (Rust)** — 20 pts  
+  - Both requester & resolver protected: 20 pts  
+  - Only requester protected: 10 pts  
+  - Only resolver protected: 10 pts  
+- **File Protection (Rust)** — 10 pts 
+
 ### NOTE: VALGRIND HAS ISSUES WITH THREADS, ONLY USE IF YOU ARE CURIOUS
 
 To verify that you do not leak memory, you may want to use *valgrind* to test your program. To install *valgrind*, use the following command:
