@@ -146,10 +146,9 @@ Your program should adhere to good coding style practices.
   - Only requester protected: 15 pts  
   - Only resolver protected: 15 pts  
 - **File Protection (C)** — 10 pts  
-- **C Traditional Requirements / Overall** — 10 pts  
+- **C Implementation Works** — 10 pts  
 
 ### Rust Implementation (40 pts)
-- **C Implementation Works (required for Rust grading)** — 10 pts  
 - **Rust Implementation (as expected)** — 10 pts  
 - **Bounded Buffer Protection (Rust)** — 20 pts  
   - Both requester & resolver protected: 20 pts  
